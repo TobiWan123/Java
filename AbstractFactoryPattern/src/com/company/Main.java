@@ -3,6 +3,8 @@ import java.util.*;
 
 public class Main {
 
+    // Abstract Factory Pattern with Abstract CarFactory -> ECarFactory, FCarFactory - build cars
+
     static Scanner scan = new Scanner(System.in);
 
     public static int main(String[] args) {
@@ -12,6 +14,7 @@ public class Main {
 
         System.out.println("----------Building random Cars---------");
 
+        // build random cars
         for(int i = 0; i < 10; i++){
             if(Math.random() * 2 > 1){
                 cars.add(FactoryE.buildCar());
@@ -24,6 +27,7 @@ public class Main {
         int action;
         boolean end = false;
 
+        // program-loop with simple menu
         while(true){
             System.out.println("1. Show Cars | 2. build ECar | 3. build FCar | 4. drive rand() Car | 5. end program\n");
             action = scan.nextInt();
@@ -44,6 +48,7 @@ public class Main {
         return 0;
     }
 
+    // show all built cars
     public static void showCars(ArrayList<Car> cars){
         int i = 1;
         for (Car c : cars){
@@ -55,6 +60,7 @@ public class Main {
         }
     }
 
+    // drive a random car
     public static void driveRandom(ArrayList<Car> cars) {
         int nr = (int) Math.ceil(Math.random() * cars.size() - 1);
         cars.get(nr).drive(nr);
