@@ -7,7 +7,7 @@ public class Main {
 
     static Scanner scan = new Scanner(System.in);
 
-    public static int main(String[] args) {
+    public static void main(String[] args) {
         ArrayList<Car> cars = new ArrayList<>();
         CarFactory FactoryF  = new FCarFactory();
         CarFactory FactoryE  = new ECarFactory();
@@ -45,7 +45,7 @@ public class Main {
 
         System.out.println("End of program....");
 
-        return 0;
+        return;
     }
 
     // show all built cars
